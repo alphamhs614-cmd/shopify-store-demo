@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fable & Thread – Shopify storefront concept (personalised products, reviews, checkout)</title>
+<meta name="description" content="Storefront mockup for a new Shopify brand: product personalisation with live preview, variants, star reviews and a card/PayPal checkout flow. Fictional brand.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1d1a17;--muted:#77706a;--bg:#fbf8f3;--sand:#f1e9dd;--line:#e7ded1;--accent:#9a5b34;--accent2:#c27a48;--olive:#5e6b4a}
+*{box-sizing:border-box;margin:0;padding:0}html.lenis{height:auto}.lenis.lenis-smooth{scroll-behavior:auto}
+body{font-family:"DM Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;line-height:1.55}
+a{color:inherit;text-decoration:none}button{font-family:inherit;cursor:pointer}
+.wrap{width:min(1240px,92%);margin:auto}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1.05}
+.announce{background:var(--ink);color:#efe6da;font-size:.8rem;letter-spacing:.06em;text-align:center;padding:.5rem;overflow:hidden;white-space:nowrap}
+.announce span{display:inline-block;padding:0 2.5rem}
+header{position:sticky;top:0;z-index:40;background:rgba(251,248,243,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:74px}
+nav{display:flex;gap:1.6rem;font-size:.92rem}nav a{position:relative}nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:var(--ink);transition:width .3s}nav a:hover::after{width:100%}
+.logo{font-family:"Cormorant Garamond",serif;font-size:1.8rem;font-weight:600;letter-spacing:.02em;text-align:center}.logo em{color:var(--accent);font-style:italic}
+.icons{display:flex;justify-content:flex-end;gap:1.2rem;align-items:center}
+.icons button{background:none;border:0;font-size:1.05rem;position:relative}
+.count{position:absolute;top:-8px;right:-10px;background:var(--accent);color:#fff;font-size:.66rem;width:18px;height:18px;border-radius:50%;display:grid;place-items:center}
+.burger{display:none}
+.demo{font-size:.75rem;color:var(--muted);text-align:center;padding:.5rem;background:var(--sand)}
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:82vh}
+.hero .txt{padding:5rem 8% 4rem;display:flex;flex-direction:column;justify-content:center}
+.kick{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-size:clamp(3rem,6vw,5.6rem);margin:1rem 0 1.2rem}.hero h1 i{color:var(--accent)}
+.hero p{color:var(--muted);max-width:30rem;font-size:1.08rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--ink);color:#fff;border:0;padding:1rem 1.8rem;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;transition:background .25s}
+.btn:hover{background:var(--accent)}.btn.line{background:transparent;color:var(--ink);border:1px solid var(--ink)}.btn.line:hover{background:var(--ink);color:#fff}
+.hero .ctas{display:flex;gap:.8rem;margin-top:2rem;flex-wrap:wrap}
+.hero .art{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 70% 30%,#e9d6bf,#c99d77 55%,#8d5a37)}
+.wallet{position:absolute;width:56%;aspect-ratio:1.45;left:22%;top:26%;border-radius:18px;background:linear-gradient(145deg,#a8653b,#6e3d20);box-shadow:0 50px 80px -30px rgba(40,20,5,.7),inset 0 0 0 6px rgba(255,255,255,.04)}
+.wallet::before{content:"";position:absolute;inset:12px;border:1.5px dashed rgba(255,230,200,.45);border-radius:12px}
+.wallet .mono{position:absolute;right:12%;bottom:18%;font-family:"Great Vibes",cursive;font-size:clamp(1.8rem,3.4vw,3rem);color:#f6d9a8;text-shadow:0 1px 0 rgba(0,0,0,.35)}
+.tag{position:absolute;background:#fff;padding:.7rem 1rem;font-size:.82rem;box-shadow:0 20px 40px -20px rgba(0,0,0,.4)}.tag b{display:block}
+.tag.t1{left:8%;top:14%}.tag.t2{right:7%;bottom:12%}
+/* usp */
+.usp{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line)}.usp div{padding:1.4rem;text-align:center;font-size:.88rem;border-right:1px solid var(--line)}.usp div:last-child{border:0}.usp b{display:block;font-size:.95rem}
+section{padding:5.5rem 0}
+.sh{display:flex;justify-content:space-between;align-items:end;margin-bottom:2.4rem;gap:1rem;flex-wrap:wrap}.sh h2{font-size:clamp(2.2rem,4vw,3.4rem)}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap}.chips button{border:1px solid var(--line);background:#fff;padding:.5rem 1rem;border-radius:999px;font-size:.85rem}.chips button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.prod{cursor:pointer}.prod .ph{aspect-ratio:4/5;position:relative;overflow:hidden;background:var(--sand);display:grid;place-items:center}
+.prod .ph .obj{transition:transform .6s cubic-bezier(.2,.7,.2,1)}.prod:hover .obj{transform:scale(1.08) rotate(-3deg)}
+.badge{position:absolute;top:12px;left:12px;background:#fff;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .6rem}
+.quick{position:absolute;left:12px;right:12px;bottom:12px;background:var(--ink);color:#fff;text-align:center;padding:.7rem;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transform:translateY(130%);transition:transform .35s}.prod:hover .quick{transform:none}
+.prod h3{font-family:"DM Sans";font-weight:500;font-size:1rem;margin-top:.8rem}.prod .p{color:var(--muted);font-size:.92rem}.st{color:#c58a2b;font-size:.82rem}
+.obj{width:58%;aspect-ratio:1.4;border-radius:12px;box-shadow:0 30px 40px -20px rgba(40,20,5,.55)}
+.obj.mug{width:44%;aspect-ratio:.9;border-radius:8px 8px 22px 22px}.obj.note{width:46%;aspect-ratio:.72;border-radius:4px 10px 10px 4px}.obj.key{width:24%;aspect-ratio:.45;border-radius:40px}
+/* product page */
+.pdp{display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:start}
+.gallery{position:sticky;top:96px}
+.stage{aspect-ratio:1;background:radial-gradient(90% 80% at 50% 35%,#f6ede1,#e6d4bd);display:grid;place-items:center;position:relative;overflow:hidden}
+.stage .w{width:66%;aspect-ratio:1.45;border-radius:20px;position:relative;transition:background .5s;box-shadow:0 60px 80px -40px rgba(40,20,5,.65)}
+.stage .w::before{content:"";position:absolute;inset:14px;border:1.5px dashed rgba(255,230,200,.45);border-radius:13px}
+#prev{position:absolute;right:11%;bottom:16%;font-family:"Great Vibes",cursive;font-size:clamp(1.6rem,3.2vw,2.8rem);color:#f6d9a8;text-shadow:0 1px 0 rgba(0,0,0,.35);transition:all .3s;max-width:78%;white-space:nowrap;overflow:hidden}
+#prev.serif{font-family:"Cormorant Garamond",serif;font-weight:600;letter-spacing:.18em;text-transform:uppercase;font-size:clamp(1.1rem,2vw,1.7rem)}
+#prev.sans{font-family:"DM Sans";font-weight:700;letter-spacing:.3em;font-size:clamp(1rem,1.8vw,1.4rem)}
+.live{position:absolute;top:16px;left:16px;background:#fff;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:.35rem .7rem}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;margin-top:.6rem}.thumbs div{aspect-ratio:1;background:var(--sand);border:1px solid transparent;cursor:pointer}.thumbs div.on{border-color:var(--ink)}
+.info h1{font-size:clamp(2.2rem,3.6vw,3.2rem);margin:.6rem 0}
+.price{font-size:1.4rem}.price s{color:var(--muted);font-size:1rem;margin-left:.5rem}
+.opt{margin-top:1.6rem}.opt .lbl{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem;display:flex;justify-content:space-between}
+.sw{display:flex;gap:.6rem}.sw button{width:38px;height:38px;border-radius:50%;border:2px solid var(--bg);outline:1px solid var(--line)}.sw button.on{outline:2px solid var(--ink)}
+.sz{display:flex;gap:.5rem;flex-wrap:wrap}.sz button{border:1px solid var(--line);background:#fff;padding:.65rem 1rem;font-size:.88rem}.sz button.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.pers{border:1px dashed var(--accent2);background:#fff;padding:1.2rem;margin-top:1.6rem}
+.pers input{width:100%;padding:.85rem;border:1px solid var(--line);font:inherit;margin:.4rem 0}.pers small{color:var(--muted)}
+.toggle{display:flex;align-items:center;gap:.6rem;font-weight:500}.toggle input{accent-color:var(--accent);width:18px;height:18px}
+.qty{display:flex;border:1px solid var(--line);width:max-content}.qty button{background:none;border:0;width:42px;font-size:1.1rem}.qty span{width:36px;display:grid;place-items:center}
+.buy{display:flex;gap:.6rem;margin-top:1.6rem}.buy .btn{flex:1}
+.pay{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:1rem;align-items:center;font-size:.78rem;color:var(--muted)}
+.pm{border:1px solid var(--line);background:#fff;border-radius:5px;padding:.2rem .5rem;font-weight:700;font-size:.72rem;letter-spacing:.03em}
+.pm.v{color:#1a1f71}.pm.mc{color:#eb001b}.pm.pp{color:#003087}.pm.pp i{color:#009cde;font-style:normal}
+.acc details{border-bottom:1px solid var(--line);padding:1rem 0}.acc summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;font-weight:500}.acc summary::after{content:"+"}.acc details[open] summary::after{content:"–"}.acc p{color:var(--muted);margin-top:.5rem;font-size:.92rem}
+/* reviews */
+.rev{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem}
+.score{font-family:"Cormorant Garamond";font-size:4.5rem;line-height:1}.bars div{display:grid;grid-template-columns:30px 1fr 34px;gap:.6rem;align-items:center;font-size:.85rem;margin:.35rem 0}.bars i{height:6px;background:var(--line);position:relative}.bars i b{position:absolute;inset:0 auto 0 0;background:#c58a2b}
+.rcard{border-bottom:1px solid var(--line);padding:1.4rem 0}.rcard h4{font-weight:700;margin:.3rem 0}.rcard p{color:#4b4540}.rcard small{color:var(--muted)}.ver{color:var(--olive);font-size:.78rem;font-weight:700}
+.wr{margin-top:1.4rem;background:#fff;border:1px solid var(--line);padding:1.2rem;display:none}.wr.on{display:block}
+.wr input,.wr textarea{width:100%;padding:.75rem;border:1px solid var(--line);font:inherit;margin:.35rem 0}.pick{font-size:1.6rem;color:#d8cfc2;cursor:pointer;letter-spacing:4px}.pick span.on{color:#c58a2b}
+.story{background:var(--ink);color:#efe6da;display:grid;grid-template-columns:1fr 1fr;gap:4rem;padding:5rem 6%;align-items:center}.story h2{font-size:clamp(2.2rem,4vw,3.4rem);color:#fff}.story p{color:#bdb3a6}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.steps3 div{border-top:1px solid #4a433c;padding-top:1rem}.steps3 b{font-family:"Cormorant Garamond";font-size:2rem;color:var(--accent2)}
+.news{text-align:center;max-width:38rem;margin:auto}.news form{display:flex;margin-top:1.4rem}.news input{flex:1;padding:1rem;border:1px solid var(--ink);font:inherit;background:transparent}
+footer{border-top:1px solid var(--line);padding:3rem 0 2rem;font-size:.88rem;color:var(--muted)}footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem}footer h4{color:var(--ink);margin-bottom:.6rem;font-family:"DM Sans";font-size:.9rem}footer a{display:block;padding:.15rem 0}
+/* drawer + checkout */
+.scrim{position:fixed;inset:0;background:rgba(20,15,10,.45);z-index:80;opacity:0;pointer-events:none;transition:opacity .3s}.scrim.on{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:420px;max-width:100vw;background:var(--bg);z-index:90;transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.7,.2,1);display:flex;flex-direction:column}.drawer.on{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 1.5rem;border-bottom:1px solid var(--line)}.dh button{background:none;border:0;font-size:1.3rem}
+.ship{padding:1rem 1.5rem;font-size:.85rem}.ship i{display:block;height:4px;background:var(--line);margin-top:.5rem}.ship i b{display:block;height:100%;background:var(--olive);transition:width .5s}
+.items{flex:1;overflow:auto;padding:0 1.5rem}.it{display:grid;grid-template-columns:72px 1fr auto;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--line);font-size:.9rem}.it .th{aspect-ratio:1;border-radius:6px}.it small{color:var(--muted);display:block}
+.df{padding:1.3rem 1.5rem;border-top:1px solid var(--line)}.df .tot{display:flex;justify-content:space-between;font-weight:700;margin-bottom:1rem}
+.modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:1rem}.modal.on{display:grid}
+.co{background:#fff;width:min(880px,100%);max-height:92vh;overflow:auto;display:grid;grid-template-columns:1.2fr .8fr;box-shadow:0 40px 80px rgba(0,0,0,.35)}
+.co .l{padding:2rem}.co .r{background:#f5f5f5;padding:2rem;border-left:1px solid #e5e5e5;font-size:.9rem}
+.co h3{font-family:"DM Sans";font-size:1rem;font-weight:700;margin:1.2rem 0 .6rem}
+.express{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}.express button{border:0;border-radius:6px;padding:.8rem;font-weight:800}.express .ppb{background:#ffc439;color:#003087}.express .ap{background:#000;color:#fff}
+.or{text-align:center;font-size:.8rem;color:#888;margin:1rem 0;position:relative}
+.co input{width:100%;padding:.8rem;border:1px solid #d9d9d9;border-radius:6px;font:inherit;margin:.3rem 0}
+.co .two{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.radio{border:1px solid #d9d9d9;border-radius:6px}.radio label{display:flex;justify-content:space-between;align-items:center;padding:.8rem;border-bottom:1px solid #e5e5e5;cursor:pointer}.radio label:last-child{border:0}
+.co .pay-btn{width:100%;background:#1773b0;color:#fff;border:0;border-radius:6px;padding:1rem;font-weight:700;margin-top:1rem;font-size:1rem}
+.co .x{float:right;background:none;border:0;font-size:1.3rem}
+.done{text-align:center;padding:3rem 2rem;display:none}.done.on{display:block}.done .tk{width:64px;height:64px;border-radius:50%;background:#e8f3ea;color:#2e7d32;font-size:1.8rem;display:grid;place-items:center;margin:0 auto 1rem}
+.rv{opacity:0;transform:translateY(30px)}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+@media(max-width:900px){
+ nav{display:none}.burger{display:block;background:none;border:0;font-size:1.4rem;text-align:left}.bar{grid-template-columns:auto 1fr auto}.logo{font-size:1.5rem}
+ .hero,.pdp,.rev,.story,.co{grid-template-columns:1fr}.hero .art{min-height:52vh}.hero .txt{padding:3rem 6%}
+ .grid{grid-template-columns:1fr 1fr}.usp{grid-template-columns:1fr 1fr}.usp div:nth-child(2){border-right:0}.usp div{border-bottom:1px solid var(--line)}
+ .gallery{position:static}.steps3{grid-template-columns:1fr}footer .cols{grid-template-columns:1fr 1fr}.co .r{border:0;border-top:1px solid #e5e5e5}section{padding:3.5rem 0}
+ nav.open{display:flex;flex-direction:column;position:absolute;top:74px;left:0;right:0;background:var(--bg);padding:1rem 4%;border-bottom:1px solid var(--line)}
+}
+</style>
+</head>
+<body>
+<div class="announce"><span>Free personalisation on every order</span><span>Free EU shipping over €60</span><span>30-day returns</span><span>Free personalisation on every order</span><span>Free EU shipping over €60</span></div>
+<header><div class="wrap bar">
+ <nav id="nav"><a href="#shop">Shop</a><a href="#product">Personalise</a><a href="#reviews">Reviews</a><a href="#story">Our story</a></nav>
+ <button class="burger" aria-label="Menu">☰</button>
+ <a class="logo" href="#top">Fable <em>&amp;</em> Thread</a>
+ <div class="icons"><button aria-label="Search">⌕</button><button aria-label="Account">◯</button><button id="cartBtn" aria-label="Cart">🛍<span class="count" id="cc">0</span></button></div>
+</div></header>
+<div class="demo">Storefront concept · fictional brand · shows theme, navigation, personalisation, reviews and checkout working together, as it would be built on Shopify (Online Store 2.0)</div>
+
+<div class="hero" id="top">
+ <div class="txt"><span class="kick hi">New · The Initials Collection</span><h1 class="hi">Made for you.<br><i>Literally.</i></h1><p class="hi">Full-grain leather goods and everyday objects, personalised with your initials or a short message, crafted to order in 48 hours.</p><div class="ctas hi"><a class="btn" href="#product">Personalise yours</a><a class="btn line" href="#shop">Shop all</a></div></div>
+ <div class="art"><div class="wallet"><span class="mono">A.M.</span></div><div class="tag t1"><b>★ 4.9 / 5</b>1,280 verified reviews</div><div class="tag t2"><b>Ships in 48h</b>hand-stamped in Porto</div></div>
+</div>
+<div class="usp"><div><b>Free personalisation</b>up to 12 characters</div><div><b>Secure checkout</b>Cards, PayPal, Apple Pay</div><div><b>Free shipping</b>on orders over €60</div><div><b>30-day returns</b>non-personalised items</div></div>
+
+<section id="shop"><div class="wrap">
+ <div class="sh rv"><h2>Bestsellers</h2><div class="chips" id="chips"><button class="on" data-c="all">All</button><button data-c="leather">Leather</button><button data-c="home">Home</button><button data-c="paper">Paper</button></div></div>
+ <div class="grid" id="grid"></div>
+</div></section>
+
+<section id="product" style="background:#fff;border-block:1px solid var(--line)"><div class="wrap pdp">
+ <div class="gallery rv"><div class="stage"><span class="live">● Live preview</span><div class="w" id="wal"><span id="prev">A.M.</span></div></div>
+  <div class="thumbs"><div class="on" style="background:linear-gradient(145deg,#a8653b,#6e3d20)"></div><div style="background:linear-gradient(145deg,#2f2a26,#121010)"></div><div style="background:linear-gradient(145deg,#6d7a58,#3f4a30)"></div><div style="background:linear-gradient(145deg,#c9a27c,#9b7652)"></div></div></div>
+ <div class="info rv">
+  <span class="kick">Leather · Bestseller</span><h1>The Monogram Card Wallet</h1>
+  <a href="#reviews" class="st">★★★★★ <span style="color:var(--muted)">4.9 · 412 reviews</span></a>
+  <p class="price" style="margin-top:.8rem"><span id="pr">€49.00</span><s>€59.00</s></p>
+  <div class="opt"><div class="lbl"><span>Colour</span><span id="cn">Cognac</span></div><div class="sw" id="sw">
+   <button class="on" data-n="Cognac" data-g="linear-gradient(145deg,#a8653b,#6e3d20)" style="background:#94552f"></button><button data-n="Midnight" data-g="linear-gradient(145deg,#2f2a26,#121010)" style="background:#1d1a17"></button><button data-n="Olive" data-g="linear-gradient(145deg,#6d7a58,#3f4a30)" style="background:#5e6b4a"></button><button data-n="Sand" data-g="linear-gradient(145deg,#c9a27c,#9b7652)" style="background:#b88d63"></button></div></div>
+  <div class="opt"><div class="lbl"><span>Size</span></div><div class="sz" id="sz"><button class="on" data-p="49">4 cards · €49</button><button data-p="59">6 cards + coin · €59</button><button data-p="69">Bifold · €69</button></div></div>
+  <div class="pers"><label class="toggle"><input type="checkbox" id="pon" checked> Add personalisation <span style="color:var(--olive);font-size:.8rem">FREE</span></label>
+   <div id="pbox"><input id="ptxt" maxlength="12" value="A.M." aria-label="Personalised text"><div class="sz" id="font" style="margin:.3rem 0 .5rem"><button class="on" data-f="">Script</button><button data-f="serif">Classic</button><button data-f="sans">Modern</button></div><small><span id="left">8</span> characters left · saved as a line-item property and shown on the order</small></div></div>
+  <div class="buy"><div class="qty"><button id="qm">−</button><span id="q">1</span><button id="qp">+</button></div><button class="btn" id="add">Add to cart</button></div>
+  <button class="btn line" id="buynow" style="width:100%;margin-top:.6rem">Buy it now</button>
+  <div class="pay">Secure checkout: <span class="pm v">VISA</span><span class="pm mc">●● Mastercard</span><span class="pm">AMEX</span><span class="pm pp">Pay<i>Pal</i></span><span class="pm"> Pay</span><span class="pm">G Pay</span></div>
+  <div class="acc" style="margin-top:1.4rem"><details open><summary>Details</summary><p>Full-grain vegetable-tanned leather, hand-stitched edges, RFID lining. 10.5 × 7.5 cm.</p></details><details><summary>Shipping & returns</summary><p>Made to order in 48h. Free EU shipping over €60. Personalised items are final sale.</p></details><details><summary>Care</summary><p>Wipe with a dry cloth, condition twice a year.</p></details></div>
+ </div>
+</div></section>
+
+<section id="reviews"><div class="wrap rev">
+ <div class="rv"><span class="kick">Customer reviews</span><div class="score" style="margin:.6rem 0">4.9</div><div class="st" style="font-size:1.1rem">★★★★★</div><p style="color:var(--muted);margin:.4rem 0 1.2rem">Based on 412 verified reviews</p>
+  <div class="bars"><div>5★<i><b style="width:91%"></b></i>376</div><div>4★<i><b style="width:7%"></b></i>28</div><div>3★<i><b style="width:2%"></b></i>6</div><div>2★<i><b style="width:.5%"></b></i>2</div><div>1★<i><b style="width:0"></b></i>0</div></div>
+  <button class="btn line" id="wbtn" style="margin-top:1.4rem">Write a review</button>
+  <form class="wr" id="wr"><div class="pick" id="pick"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div><input required placeholder="Your name"><input required placeholder="Review title"><textarea rows="3" required placeholder="What did you think?"></textarea><button class="btn" style="width:100%">Submit review</button></form>
+ </div>
+ <div id="rlist" class="rv">
+  <div class="rcard"><span class="st">★★★★★</span> <span class="ver">✓ Verified buyer</span><h4>Perfect gift for my husband</h4><p>The script initials look so elegant. Arrived in 3 days, beautifully wrapped.</p><small>Sofia R. · Cognac · 4 cards</small></div>
+  <div class="rcard"><span class="st">★★★★★</span> <span class="ver">✓ Verified buyer</span><h4>Quality is outstanding</h4><p>Thick leather, clean stitching. The live preview showed exactly what I got.</p><small>Jonas B. · Midnight · Bifold</small></div>
+  <div class="rcard"><span class="st">★★★★☆</span> <span class="ver">✓ Verified buyer</span><h4>Lovely, slightly snug at first</h4><p>Needed a week to break in. Now my favourite everyday wallet.</p><small>Amira K. · Olive · 6 cards</small></div>
+ </div>
+</div></section>
+
+<div class="story" id="story"><div class="rv"><span class="kick" style="color:var(--accent2)">How it works</span><h2>Personalised in three steps</h2><p style="margin-top:1rem">Your text is stored with the order, sent to the workshop, and visible in Shopify admin, so nothing gets lost between checkout and production.</p></div>
+ <div class="steps3 rv"><div><b>01</b><p>Pick colour & size</p></div><div><b>02</b><p>Type your initials, preview live</p></div><div><b>03</b><p>Pay securely, we stamp & ship</p></div></div></div>
+
+<section><div class="news rv"><h2 style="font-size:2.6rem">10% off your first order</h2><p style="color:var(--muted)">Join the list for new drops and gift ideas (Shopify Email / Klaviyo).</p><form onsubmit="event.preventDefault();this.innerHTML='<p style=&quot;margin:auto&quot;>✓ Welcome! Your code: <b>WELCOME10</b></p>'"><input type="email" required placeholder="Email address"><button class="btn">Subscribe</button></form></div></section>
+
+<footer><div class="wrap cols"><div><div class="logo" style="text-align:left">Fable <em>&amp;</em> Thread</div><p style="margin-top:.6rem">Fictional brand for a storefront concept. Real build: your assets, products and domain.</p></div><div><h4>Shop</h4><a href="#shop">Leather</a><a href="#shop">Home</a><a href="#shop">Paper</a></div><div><h4>Help</h4><a>Shipping</a><a>Returns</a><a>FAQ</a></div><div><h4>Stack</h4><p>Shopify OS 2.0 theme · Shopify Payments + PayPal · Judge.me reviews · line-item personalisation</p></div></div></footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer"><div class="dh"><h3 style="font-size:1.6rem">Your cart</h3><button id="dx" aria-label="Close">✕</button></div>
+ <div class="ship" id="ship"></div><div class="items" id="items"></div>
+ <div class="df"><div class="tot"><span>Subtotal</span><span id="sub">€0.00</span></div><button class="btn" id="chk" style="width:100%">Checkout</button><p style="font-size:.75rem;color:var(--muted);text-align:center;margin-top:.6rem">Taxes and shipping calculated at checkout</p></div></aside>
+
+<div class="modal" id="modal"><div class="co"><div class="l" id="col">
+  <button class="x" id="cx">✕</button><b style="font-family:'Cormorant Garamond';font-size:1.6rem">Fable &amp; Thread</b><p style="font-size:.78rem;color:#888">Cart › Information › Shipping › <b style="color:#333">Payment</b> · test mode</p>
+  <h3>Express checkout</h3><div class="express"><button class="ppb" data-pay="PayPal">Pay<span style="color:#009cde">Pal</span></button><button class="ap" data-pay="Apple Pay"> Pay</button></div>
+  <div class="or">OR PAY WITH CARD</div>
+  <input placeholder="Email" value="test@example.com"><div class="two"><input placeholder="First name" value="Alex"><input placeholder="Last name" value="Muller"></div><input placeholder="Address" value="Rua das Flores 12, Porto">
+  <h3>Payment</h3><div class="radio"><label><span><input type="radio" name="pm" checked> Credit card</span><span><span class="pm v">VISA</span> <span class="pm mc">MC</span></span></label><div style="padding:.8rem;background:#fafafa"><input value="4242 4242 4242 4242" aria-label="Card number"><div class="two"><input value="12 / 29"><input value="123"></div></div><label><span><input type="radio" name="pm"> PayPal</span><span class="pm pp">Pay<i>Pal</i></span></label></div>
+  <button class="pay-btn" id="paybtn">Pay now</button></div>
+ <div class="done" id="done"><div class="tk">✓</div><h2>Test payment processed</h2><p style="color:#666;margin:.6rem 0 1.4rem">Order #1001 confirmed. The personalisation text is attached to the order as a line-item property, ready for production.</p><button class="btn" id="cx2">Back to store</button></div>
+ <div class="r" id="cor"></div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;let lenis=null;
+if(window.Lenis&&!reduce){lenis=new Lenis({lerp:.1});const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf)}
+$$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=$(a.getAttribute('href'));if(t){e.preventDefault();lenis?lenis.scrollTo(t,{offset:-74}):t.scrollIntoView({behavior:'smooth'});$('#nav').classList.remove('open')}}));
+$('.burger').onclick=()=>$('#nav').classList.toggle('open');
+const P=[{n:'The Monogram Card Wallet',p:49,c:'leather',g:'linear-gradient(145deg,#a8653b,#6e3d20)',k:'',b:'Bestseller',r:412},
+{n:'Engraved Ceramic Mug',p:28,c:'home',g:'linear-gradient(160deg,#f3eee6,#d8cbb8)',k:'mug',b:'New',r:188},
+{n:'Initials Leather Notebook',p:39,c:'paper',g:'linear-gradient(145deg,#5e6b4a,#353d28)',k:'note',b:'',r:256},
+{n:'Monogram Key Fob',p:19,c:'leather',g:'linear-gradient(145deg,#2f2a26,#121010)',k:'key',b:'Gift idea',r:97},
+{n:'Weekender Luggage Tag',p:24,c:'leather',g:'linear-gradient(145deg,#c9a27c,#9b7652)',k:'',b:'',r:143},
+{n:'Custom Linen Tote',p:34,c:'home',g:'linear-gradient(160deg,#e9e0cf,#c8b89c)',k:'note',b:'',r:76},
+{n:'Letterpress Card Set',p:16,c:'paper',g:'linear-gradient(160deg,#fff,#efe6da)',k:'note',b:'',r:64},
+{n:'Bifold Wallet',p:69,c:'leather',g:'linear-gradient(145deg,#7a4426,#3e2010)',k:'',b:'',r:201}];
+function grid(c){$('#grid').innerHTML=P.filter(p=>c==='all'||p.c===c).map((p,i)=>`<div class="prod" data-i="${P.indexOf(p)}"><div class="ph">${p.b?`<span class="badge">${p.b}</span>`:''}<div class="obj ${p.k}" style="background:${p.g}"></div><span class="quick">Quick add</span></div><h3>${p.n}</h3><span class="st">★★★★★</span> <small style="color:var(--muted)">(${p.r})</small><div class="p">From €${p.p}.00 · personalisable</div></div>`).join('');
+ $$('.prod').forEach(el=>el.onclick=e=>{const p=P[el.dataset.i];if(e.target.closest('.quick')){addItem({n:p.n,v:'Default',t:'',p:p.p,g:p.g,q:1})}else{const t=$('#product');lenis?lenis.scrollTo(t,{offset:-74}):t.scrollIntoView()}});
+ if(window.gsap&&!reduce)gsap.from('.prod',{y:30,opacity:0,stagger:.06,duration:.6,ease:'power2.out'})}
+grid('all');$$('#chips button').forEach(b=>b.onclick=()=>{$$('#chips button').forEach(x=>x.classList.remove('on'));b.classList.add('on');grid(b.dataset.c)});
+// pdp
+let color='Cognac',grad=$('#sw button').dataset.g,price=49,size='4 cards',font='',q=1;$('#wal').style.background=grad;
+$$('#sw button').forEach((b,i)=>b.onclick=()=>{$$('#sw button').forEach(x=>x.classList.remove('on'));b.classList.add('on');color=b.dataset.n;grad=b.dataset.g;$('#cn').textContent=color;$('#wal').style.background=grad;$$('.thumbs div').forEach((t,j)=>t.classList.toggle('on',i===j));if(window.gsap)gsap.fromTo('#wal',{rotate:-4,scale:.96},{rotate:0,scale:1,duration:.6,ease:'back.out(2)'})});
+$$('.thumbs div').forEach((t,i)=>t.onclick=()=>$$('#sw button')[i].click());
+$$('#sz button').forEach(b=>b.onclick=()=>{$$('#sz button').forEach(x=>x.classList.remove('on'));b.classList.add('on');price=+b.dataset.p;size=b.textContent.split(' ·')[0];$('#pr').textContent='€'+price+'.00'});
+$$('#font button').forEach(b=>b.onclick=()=>{$$('#font button').forEach(x=>x.classList.remove('on'));b.classList.add('on');font=b.dataset.f;$('#prev').className=font});
+const pt=$('#ptxt');pt.oninput=()=>{$('#prev').textContent=pt.value||' ';$('#left').textContent=12-pt.value.length};
+$('#pon').onchange=e=>{$('#pbox').style.display=e.target.checked?'':'none';$('#prev').style.opacity=e.target.checked?1:0};
+$('#qm').onclick=()=>{q=Math.max(1,q-1);$('#q').textContent=q};$('#qp').onclick=()=>{q++;$('#q').textContent=q};
+function cur(){return{n:'The Monogram Card Wallet',v:color+' / '+size,t:$('#pon').checked&&pt.value?pt.value+' ('+({'':'Script',serif:'Classic',sans:'Modern'}[font])+')':'',p:price,g:grad,q}}
+$('#add').onclick=()=>addItem(cur());$('#buynow').onclick=()=>{cart=[cur()];render();openCo()};
+// cart
+let cart=[];function addItem(it){cart.push(it);render();openDrawer();if(window.gsap)gsap.fromTo('#cc',{scale:1.8},{scale:1,duration:.5,ease:'back.out(3)'})}
+function total(){return cart.reduce((s,i)=>s+i.p*i.q,0)}
+function render(){$('#cc').textContent=cart.reduce((s,i)=>s+i.q,0);const t=total();$('#sub').textContent='€'+t.toFixed(2);
+ $('#ship').innerHTML=t>=60?'🎉 You unlocked <b>free shipping</b><i><b style="width:100%"></b></i>':`You're <b>€${(60-t).toFixed(2)}</b> away from free shipping<i><b style="width:${t/60*100}%"></b></i>`;
+ $('#items').innerHTML=cart.length?cart.map((i,k)=>`<div class="it"><div class="th" style="background:${i.g}"></div><div><b>${i.n}</b><small>${i.v}</small>${i.t?`<small>✎ Personalisation: ${i.t.replace(/</g,'&lt;')}</small>`:''}<small>Qty ${i.q}</small></div><div>€${(i.p*i.q).toFixed(2)}<br><a style="font-size:.75rem;color:var(--muted);cursor:pointer" data-rm="${k}">Remove</a></div></div>`).join(''):'<p style="padding:2rem 0;color:var(--muted)">Your cart is empty.</p>';
+ $$('[data-rm]').forEach(a=>a.onclick=()=>{cart.splice(+a.dataset.rm,1);render()})}
+render();
+const openDrawer=()=>{$('#drawer').classList.add('on');$('#scrim').classList.add('on')},closeDrawer=()=>{$('#drawer').classList.remove('on');$('#scrim').classList.remove('on')};
+$('#cartBtn').onclick=openDrawer;$('#dx').onclick=closeDrawer;$('#scrim').onclick=closeDrawer;
+function openCo(){closeDrawer();if(!cart.length)return;const t=total(),sh=t>=60?0:4.9;$('#cor').innerHTML=cart.map(i=>`<div style="display:flex;gap:.8rem;margin-bottom:1rem"><div style="width:56px;height:56px;border-radius:6px;background:${i.g};flex:none"></div><div style="flex:1"><b>${i.n}</b><br><small style="color:#777">${i.v}${i.t?'<br>✎ '+i.t.replace(/</g,'&lt;'):''}</small></div><b>€${(i.p*i.q).toFixed(2)}</b></div>`).join('')+`<hr style="border:0;border-top:1px solid #ddd;margin:1rem 0"><p style="display:flex;justify-content:space-between">Subtotal<span>€${t.toFixed(2)}</span></p><p style="display:flex;justify-content:space-between">Shipping<span>${sh?'€'+sh.toFixed(2):'Free'}</span></p><p style="display:flex;justify-content:space-between;font-size:1.2rem;font-weight:700;margin-top:.6rem">Total<span>€${(t+sh).toFixed(2)}</span></p>`;$('#col').style.display='';$('#done').classList.remove('on');$('#modal').classList.add('on');$('#scrim').classList.add('on')}
+$('#chk').onclick=openCo;
+const pay=()=>{$('#col').style.display='none';$('#done').classList.add('on');cart=[];render()};$('#paybtn').onclick=pay;$$('[data-pay]').forEach(b=>b.onclick=pay);
+const closeCo=()=>{$('#modal').classList.remove('on');$('#scrim').classList.remove('on')};$('#cx').onclick=closeCo;$('#cx2').onclick=closeCo;
+// reviews
+$('#wbtn').onclick=()=>$('#wr').classList.toggle('on');let stars=5;$$('#pick span').forEach((s,i)=>{s.classList.add('on');s.onclick=()=>{stars=i+1;$$('#pick span').forEach((x,j)=>x.classList.toggle('on',j<=i))}});
+$('#wr').onsubmit=e=>{e.preventDefault();const [n,t,b]=$$('input,textarea',e.target).map(x=>x.value.replace(/</g,'&lt;'));$('#rlist').insertAdjacentHTML('afterbegin',`<div class="rcard"><span class="st">${'★'.repeat(stars)}${'☆'.repeat(5-stars)}</span> <span class="ver">✓ Just now</span><h4>${t}</h4><p>${b}</p><small>${n}</small></div>`);e.target.reset();e.target.classList.remove('on')};
+// motion
+if(window.gsap&&!reduce){gsap.registerPlugin(ScrollTrigger);if(lenis)lenis.on('scroll',ScrollTrigger.update);
+ gsap.from('.hi',{y:40,opacity:0,stagger:.12,duration:1.1,ease:'power3.out'});
+ gsap.from('.wallet',{y:80,rotate:-12,opacity:0,duration:1.4,ease:'power3.out',delay:.2});
+ gsap.to('.wallet',{y:-60,rotate:6,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+ gsap.to('.announce span',{xPercent:-100,repeat:-1,duration:14,ease:'none'});
+ $$('.rv').forEach(el=>gsap.to(el,{opacity:1,y:0,duration:.9,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
+}else $$('.rv').forEach(e=>{e.style.opacity=1;e.style.transform='none'});
+</script>
+</body>
+</html>
